@@ -7,7 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CNOE',
-  tagline: 'Internal Developer Platforms are a strategic commitment. Share learnings & build in the open.',
+  // tagline: 'Internal Developer Platforms are a strategic commitment. Share learnings & build in the open.',
+  tagline: 'Leverage Open Source Technology and build your Developer Platform now!',
   url: 'https://cnoe-io.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -43,14 +44,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cnoe-io/website/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cnoe-io/website/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -71,19 +72,15 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: '/category/deploy-a-platform',
+            position: 'left',
+            label: 'Deploy'
+          },
+          {
+            type: 'doc',
             docId: 'intro/intro',
             position: 'left',
-            label: 'Introduction',
-          },
-          {
-            to: '/docs/category/technology-capabilities',
-            position: 'left',
-            label: 'Technology Capabilities',
-          },
-          {
-            to: '/docs/reference-implementation',
-            position: 'left',
-            label: 'Reference Implementations'
+            label: 'Concepts',
           },
           {
             to: '/radars',
@@ -92,14 +89,22 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://calendar.google.com/calendar/u/0/embed?src=064a2adfce866ccb02e61663a09f99147f22f06374e7a8994066bdc81e066986@group.calendar.google.com&ctz=America/Los_Angeles',
-            label: 'Community Meetings Calendar',
-            position: 'right',
+            'aria-label': 'Community Calendar',
+            'className': 'navbar--calendar-link',
+            'href': "https://calendar.google.com/calendar/u/0/embed?src=064a2adfce866ccb02e61663a09f99147f22f06374e7a8994066bdc81e066986@group.calendar.google.com&ctz=America/Los_Angeles",
+            'position': 'right',
           },
           {
-            href: 'https://github.com/cnoe-io',
-            label: 'GitHub',
-            position: 'right',
+            'aria-label': 'Slack Channel',
+            'className': 'navbar--slack-link',
+            'href': "https://cloud-native.slack.com/archives/C05TN9WFN5S",
+            'position': 'right',
+          },
+          {
+            'aria-label': 'GitHub Repository',
+            'className': 'navbar--github-link',
+            'href': 'https://github.com/cnoe-io',
+            'position': 'right',
           },
         ],
       },
@@ -152,7 +157,24 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      imageZoom: {
+        // CSS selector to apply the plugin to, defaults to '.markdown img'
+        selector: '.markdown img',
+        // Optional medium-zoom options
+        // see: https://www.npmjs.com/package/medium-zoom#options
+        options: {
+          margin: 24,
+          background: '#FFFFFF',
+          scrollOffset: 0,
+          //container: '#zoom-container',
+          //template: '#zoom-template',
+        },
+      },
     }),
+
+  plugins: [
+    'plugin-image-zoom'
+  ],
 };
 
 module.exports = config;

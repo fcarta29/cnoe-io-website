@@ -1,13 +1,18 @@
 ---
-sidebar_position: 1
-description: A multitudinal and communal plan
-title: Application IDP
+sidebar_position: 2
+description: |
+  deploy the CNOE IDP to Amazon EKS. 
+title: Amazon EKS
 ---
 
-![overview](../images/application-idp.png)
+:::tip GitHub Repo
 
+ [cnoe-io/reference-implementation-aws](https://github.com/cnoe-io/reference-implementation-aws)
+:::
 
 > **_NOTE:_**  Applications deployed in this repository are not meant or configured for production.
+
+![overview](../images/application-idp.png)
 
 ## Secret handling
 
@@ -81,7 +86,7 @@ github_pat_ABCDEDFEINDK....
 Follow the following steps to get started.
 
 1. Create GitHub apps and GitHub token as described above.
-2. Create a new EKS cluster. We do not include EKS cluster in the installation module because EKS cluster requirements vary between organizations and the focus of this is integration of different projects. If you prefer, you can create a new basic cluster with the included [`eksctl.yaml`](./eksctl.yaml) file:
+2. Create a new EKS cluster. We do not include EKS cluster in the installation module because EKS cluster requirements vary between organizations and the focus of this is integration of different projects. If you prefer, you can create a new basic cluster with the included [`eksctl.yaml`](https://github.com/cnoe-io/reference-implementation-aws/blob/main/eksctl.yaml) file:
     ```eksctl create -f eksctl.yaml```
     You can get eksctl from [this link](https://eksctl.io/).
 3. If you don't have a public registered Route53 zone, [register a Route53 domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html) (be sure to use Route53 as the DNS service for the domain). We **strongly encourage creating a dedicated sub domain** for this. If you'd rather manage DNS yourself, you can set `enable_dns_management` in the config file.
@@ -91,7 +96,7 @@ Follow the following steps to get started.
     # in the setups/config file, update the zone id.
     HOSTEDZONE_ID=ZO020111111
     ```
-5. Update the [`setups/config`](setups/config.yaml) file with your own values.
+5. Update the [`setups/config`](https://github.com/cnoe-io/reference-implementation-aws/blob/main/setups/config.yaml) file with your own values.
 6. Run `setups/install.sh` and follow the prompts. See the section below about monitoring installation progress.
 7. Once installation completes, navigate to `backstage.<DOMAIN_NAME>` and log in as `user1`. Password is available as a secret. You may need to wait for DNS propagation to complete to be able to login. May take ~10 minutes.
     ```bash
@@ -219,7 +224,7 @@ Currently resources created by applications are not deleted. For example, if you
 </details>
 
 ## What can you do in Backstage? 
-See [this doc](./demo.md) for demos!
+See [this doc](https://github.com/cnoe-io/reference-implementation-aws/blob/main/demo.md) for demos!
 
 ## Possible issues
 

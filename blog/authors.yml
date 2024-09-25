@@ -42,7 +42,7 @@ andklee:
 
 crenshaw:
   name: Michael Crenshaw
-  title: Sofware Engineer, Intuit
+  title: Software Engineer, Intuit
   url: https://github.com/crenshaw-dev
   image_url: https://avatars.githubusercontent.com/u/350466
 
@@ -51,3 +51,9 @@ dhamijag:
   title: Architect, AWS
   url: https://github.com/gauravhub
   image_url: https://avatars.githubusercontent.com/u/60899944
+
+vsethi:
+  name: Vikram Sethi
+  title: Principal Scientist, Adobe
+  url: https://github.com/vsethi
+  image_url: https://avatars.githubusercontent.com/u/10545494
